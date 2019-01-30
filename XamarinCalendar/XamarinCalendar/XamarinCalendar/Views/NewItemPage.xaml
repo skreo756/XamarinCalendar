@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinCalendar.Views.NewItemPage"
+             Title="New Item">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Clicked="Save_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Spacing="10" Padding="8">
+
+
+            <Label Text="Text" FontSize="Small" />
+            <Entry Text="{Binding Item.Text}" FontSize="Small" />
+            <Label Text="Description" FontSize="Small" />
+            <Editor Text="{Binding Item.Type}" FontSize="Small" Margin="0" />
+            <Label Text="Date de Début" FontSize="Small" />
+
+            <DatePicker Format = "D"
+                   
+                        MinimumDate="{Binding Item.Debut}"
+                        MaximumDate="12/31/2019"
+                        Date="{Binding Item.Debut}"/>
+
+            <TimePicker x:Name="_timePicker"
+                           Time="{Binding Item.HeureDebut}" />
+            
+            <Label Text="Date de Fin" FontSize="Medium" />
+            
+            <DatePicker Format = "D"
+                       
+                        MinimumDate="{Binding Item.Fin}"
+                        MaximumDate="12/31/2019"
+                        Date="{Binding Item.Fin}"/>
+            
+            <TimePicker Time="{Binding Item.HeureFin}" />
+
+            <Button x:Name="PressMeButton"
+                    Text = "Select Image"
+                    Clicked="PressMeButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

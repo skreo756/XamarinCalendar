@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinCalendar.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <StackLayout Spacing="6" Padding="15">
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Titre:" FontSize="Medium" />
+            <Label Text="{Binding Item.Text}" FontSize="Small" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Description:" FontSize="Medium" />
+            <Label Text="{Binding Item.Description}" FontSize="Small"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Date de début : " FontSize="Small"/>
+            <Label Text="{Binding Item.Debut}" FontSize="Small"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Date de Fin : " FontSize="Small"/>
+            <Label Text="{Binding Item.Fin}" FontSize="Small"/>
+        </StackLayout>
+        <StackLayout>
+            <Image Source="{Binding Item.Image}"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
